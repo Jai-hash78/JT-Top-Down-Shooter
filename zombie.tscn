@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://kvw5on1seo72"]
+
+[ext_resource type="Script" path="res://zombie.gd" id="1_egc51"]
+[ext_resource type="Texture2D" uid="uid://6575o24i8hpm" path="res://PNG/Enemies/enemyBlack2.png" id="2_6j21s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujuga"]
+size = Vector2(34.5, 50)
+
+[node name="Zombie" type="CharacterBody2D"]
+script = ExtResource("1_egc51")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 4.71239
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_6j21s")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -1)
+target_position = Vector2(50, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ujuga")
